@@ -50,12 +50,9 @@ class Solution {
 }
 
 
-// TC: O(n * k)
-// We go through all the words (n),
-// and for each word we scan all its characters (k).
+// TC: O(n * k) We go through all the words (n), and for each word we scan all its characters (k).
 
-// SC: O(n)
-// We store all the words inside the HashMap as groups.
+// SC: O(n) We store all the words inside the HashMap as groups.
 
 
 // 1. First, we create a HashMap to store anagram groups.
@@ -66,7 +63,7 @@ class Solution {
 // 6. At the end, we return all the groups.
 
 
-/*clean code */
+/*clean code*/
 
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs){
