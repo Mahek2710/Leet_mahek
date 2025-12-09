@@ -64,3 +64,56 @@ class Solution {
 // 4. Words with the same pattern go into the same group.
 // 5. If the pattern is new, we create a new group.
 // 6. At the end, we return all the groups.
+
+
+/*clean code */
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs){
+
+        // If input is empty, return empty list
+        if(strs.length == 0){
+            return new ArrayList<>();
+        }
+
+        // HashMap to store grouped anagrams
+        Map<String, List<String>> ansMap = new HashMap<>();
+
+        // Frequency array for 26 lowercase letters
+        int[] count = new int[26];
+
+        // Traverse each word
+        for(String s : strs){
+
+            // Reset frequency array for each word
+            Arrays.fill(count, 0);
+
+            // Count characters in the word
+            for(char c : s.toCharArray()){
+                count[c - 'a']++;
+            }
+
+            // Build a unique key from frequency array
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < 26; i++){
+                sb.append('#');
+                sb.append(count[i]);
+            }
+
+            String key = sb.toString();
+
+            // If key not present, create new group
+            if(!ansMap.containsKey(key)){
+                ansMap.put(key, new ArrayList<>());
+            }
+
+            // Add word to its anagram group
+            ansMap.get(key).add(s);
+        }
+
+        // Return all grouped anagrams
+        return new ArrayList<>(ansMap.values());
+    }
+}
+
+
