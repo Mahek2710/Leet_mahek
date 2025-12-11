@@ -32,3 +32,21 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(1)
 
+### 🔹 11/12/25
+
+1. **LeetCode 347 — Top K Frequent Elements**  
+   - Used frequency map + min-heap (keep heap size = k)  
+   - Time Complexity: O(n log k)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 13 — Roman to Integer**  
+   - Used a fixed map for single & special pairs, scan with lookahead for 2-char pairs  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+3. **LeetCode 953 — Verifying an Alien Dictionary**  
+   - Built char → rank map, compare each adjacent word letter-by-letter, handle prefix case  
+   - Time Complexity: O(n * m) — n = #words, m = average word length  
+   - Space Complexity: O(1)
+
+
