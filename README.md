@@ -48,5 +48,15 @@
    - Built char → rank map, compare each adjacent word letter-by-letter, handle prefix case  
    - Time Complexity: O(n * m) — n = #words, m = average word length  
    - Space Complexity: O(1)
+  
+### 🔹 12/12/25
 
+1. **LeetCode 128 — Longest Consecutive Sequence**  
+   - Used HashSet and start-of-sequence scanning  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
 
+2. **LeetCode 41 — First Missing Positive**  
+   - Used in-place index marking (normalize values, mark presence by negation)  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
