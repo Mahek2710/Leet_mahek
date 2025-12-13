@@ -60,3 +60,21 @@
    - Used in-place index marking (normalize values, mark presence by negation)  
    - Time Complexity: O(n)  
    - Space Complexity: O(1)
+  
+### 🔹 13/12/25 - Started with Sliding Window problems
+
+1. **LeetCode 121 — Best Time to Buy and Sell Stock**  
+   - Tracked minimum price so far and maximum profit  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+2. **LeetCode 567 — Permutation in String**  
+   - Used sliding window with character frequency arrays  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+3. **LeetCode 424 — Longest Repeating Character Replacement**  
+   - Used sliding window with max-frequency tracking  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
