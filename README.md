@@ -78,3 +78,20 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(1)
 
+### 🔹 14/12/25
+
+1. **LeetCode 3 — Longest Substring Without Repeating Characters**  
+   - Used sliding window with HashSet to maintain unique characters  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 239 — Sliding Window Maximum**  
+   - Used deque to maintain decreasing order of elements’ indices  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(k)
+
+3. **LeetCode 76 — Minimum Window Substring**  
+   - Used sliding window with frequency maps and two pointers  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
