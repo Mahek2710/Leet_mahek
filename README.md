@@ -95,3 +95,20 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(1)
 
+### 🔹 15/12/25
+
+1. **LeetCode 125 — Valid Palindrome**  
+   - Used two pointers, skipped non-alphanumeric characters, compared case-insensitively  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+2. **LeetCode 167 — Two Sum II (Input Array Is Sorted)**  
+   - Used two-pointer technique on sorted array  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+3. **LeetCode 15 — 3Sum**  
+   - Sorted array, fixed one element and applied two-pointer approach, skipped duplicates  
+   - Time Complexity: O(n²)  
+   - Space Complexity: O(1)
+
