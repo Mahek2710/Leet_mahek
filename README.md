@@ -111,4 +111,21 @@
    - Sorted array, fixed one element and applied two-pointer approach, skipped duplicates  
    - Time Complexity: O(n²)  
    - Space Complexity: O(1)
+     
+### 🔹 16/12/25
+
+1. **LeetCode 11 — Container With Most Water**  
+   - Used two pointers, starting from widest container and moving the shorter wall inward  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+2. **LeetCode 42 — Trapping Rain Water**  
+   - Used two-pointer approach with leftMax and rightMax to calculate trapped water  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+3. **LeetCode 26 — Remove Duplicates from Sorted Array**  
+   - Used two pointers (read & write) to overwrite duplicates in-place  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
 
