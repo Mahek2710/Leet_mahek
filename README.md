@@ -129,3 +129,21 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(1)
 
+### 🔹 17/12/25
+
+1. **LeetCode 31 — Next Permutation**  
+   - Found break point from the right, swapped with next greater element, and reversed the suffix  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+2. **LeetCode 412 — Fizz Buzz**  
+   - Simple iteration with conditional checks for multiples of 3 and 5  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+3. **LeetCode 14 — Longest Common Prefix**  
+   - Started with first string as prefix and gradually shortened it to match all strings  
+   - Time Complexity: O(n × m)  
+   - Space Complexity: O(1)
+
+
