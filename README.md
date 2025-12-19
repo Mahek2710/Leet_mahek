@@ -146,4 +146,16 @@
    - Time Complexity: O(n × m)  
    - Space Complexity: O(1)
 
+### 🔹 19/12/25
+
+1. **LeetCode 271 — Encode and Decode Strings**  
+   - Used a unique delimiter character to encode strings and split using the same delimiter to decode  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 647 — Palindromic Substrings**  
+   - Used expand-around-center technique to count both odd and even length palindromes  
+   - Time Complexity: O(n²)  
+   - Space Complexity: O(1)
+
 
