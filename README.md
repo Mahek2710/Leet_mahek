@@ -158,4 +158,21 @@
    - Time Complexity: O(n²)  
    - Space Complexity: O(1)
 
+### 🔹 20/12/25
+
+1. **LeetCode 68 — Text Justification**  
+   - Greedily packed words per line and handled left vs full justification using space distribution  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 704 — Binary Search**  
+   - Applied classic binary search on a sorted array using left and right pointers  
+   - Time Complexity: O(log n)  
+   - Space Complexity: O(1)
+
+3. **LeetCode 34 — Find First and Last Position of Element in Sorted Array**  
+   - Used binary search twice to find the leftmost and rightmost occurrence of the target  
+   - Time Complexity: O(log n)  
+   - Space Complexity: O(1)
+
 
