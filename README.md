@@ -180,4 +180,12 @@
    - Time Complexity: O(log n)  
    - Space Complexity: O(1)
 
+### 🔹 21/12/25
+
+1. **LeetCode 88 — Merge Sorted Array**  
+   - Merged two sorted arrays in-place by filling from the end using three pointers  
+   - Time Complexity: O(m + n)  
+   - Space Complexity: O(1)
+
+
 
