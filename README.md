@@ -187,5 +187,12 @@
    - Time Complexity: O(m + n)  
    - Space Complexity: O(1)
 
+### 🔹 22/12/25
+
+1. **LeetCode 75 — Sort Colors (Dutch National Flag Problem)**  
+   - Used three pointers to separate RED (0), WHITE (1), and BLUE (2) in-place  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
 
 
