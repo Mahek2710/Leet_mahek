@@ -194,5 +194,28 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(1)
 
+### 🔹 24/12/25
+
+1. **LeetCode 169 — Majority Element**  
+   - Used HashMap to count frequencies and selected the element with maximum count  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 74 — Search a 2D Matrix**  
+   - Treated the 2D matrix as a flattened sorted array and applied binary search  
+   - Time Complexity: O(log(m × n))  
+   - Space Complexity: O(1)
+
+3. **LeetCode 153 — Find Minimum in Rotated Sorted Array**  
+   - Used binary search to discard sorted halves and track the minimum element  
+   - Time Complexity: O(log n)  
+   - Space Complexity: O(1)
+
+4. **LeetCode 33 — Search in Rotated Sorted Array**  
+   - Identified the sorted half at each step and performed binary search accordingly  
+   - Time Complexity: O(log n)  
+   - Space Complexity: O(1)
+
+
 
 
