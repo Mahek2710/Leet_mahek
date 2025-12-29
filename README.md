@@ -216,6 +216,27 @@
    - Time Complexity: O(log n)  
    - Space Complexity: O(1)
 
+### 🔹 25/12/25
+
+1. **LeetCode 148 — Sort List**  
+   - Applied merge sort on a singly linked list using slow/fast pointer splitting and merging  
+   - Time Complexity: O(n log n)  
+   - Space Complexity: O(log n)
+
+2. **LeetCode 179 — Largest Number**  
+   - Converted numbers to strings and sorted them using a custom comparator based on concatenation order  
+   - Time Complexity: O(n log n)  
+   - Space Complexity: O(n)
+
+3. **LeetCode 875 — Koko Eating Bananas**  
+   - Used binary search on the answer space to find the minimum valid eating speed  
+   - Time Complexity: O(n log m)  
+   - Space Complexity: O(1)
+
+4. **LeetCode 981 — Time Based Key-Value Store**  
+   - Used HashMap with TreeMap to store values by timestamp and retrieve the latest valid entry  
+   - Time Complexity: O(log n) per operation  
+   - Space Complexity: O(n)
 
 
 
