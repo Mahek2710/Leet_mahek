@@ -238,5 +238,30 @@
    - Time Complexity: O(log n) per operation  
    - Space Complexity: O(n)
 
+### 🔹 29/12/25
+
+1. **LeetCode 4 — Median of Two Sorted Arrays**  
+   - Used binary search on partitions to find the median efficiently  
+   - Time Complexity: O(log(min(m, n)))  
+   - Space Complexity: O(1)
+
+### 🔹 30/12/25
+
+1. **LeetCode 876 — Middle of the Linked List**  
+   - Used slow and fast pointers to find the middle in one pass  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+2. **LeetCode 206 — Reverse Linked List**  
+   - Iteratively reversed pointers using prev, curr, and temp  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+3. **LeetCode 141 — Linked List Cycle**  
+   - Applied Floyd’s cycle detection using slow and fast pointers  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+
 
 
