@@ -262,6 +262,24 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(1)
 
+### 🔹 31/12/25
+
+1. **LeetCode 21 — Merge Two Sorted Lists**  
+   - Merged two sorted linked lists by iteratively attaching the smaller node  
+   - Time Complexity: O(n + m)  
+   - Space Complexity: O(1)
+
+2. **LeetCode 19 — Remove Nth Node From End of List**  
+   - Used two-pointer technique with a fixed gap to remove the target node in one pass  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+3. **LeetCode 2 — Add Two Numbers**  
+   - Simulated digit-by-digit addition with carry using a new linked list  
+   - Time Complexity: O(max(m, n))  
+   - Space Complexity: O(max(m, n))
+
+
 
 
 
