@@ -279,6 +279,29 @@
    - Time Complexity: O(max(m, n))  
    - Space Complexity: O(max(m, n))
 
+### 🔹 02/01/26
+
+1. **LeetCode 143 — Reorder List**  
+   - Found the middle of the list, reversed the second half, and merged both halves alternately  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+2. **LeetCode 287 — Find the Duplicate Number**  
+   - Treated the array as a linked list and used Floyd’s cycle detection  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+3. **LeetCode 138 — Copy List with Random Pointer**  
+   - Used recursion with HashMap to create deep copies of nodes  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+4. **LeetCode 23 — Merge k Sorted Lists**  
+   - Collected all node values using a min-heap and rebuilt a sorted list  
+   - Time Complexity: O(N log N)  
+   - Space Complexity: O(N)
+
+
 
 
 
