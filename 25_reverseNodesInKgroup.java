@@ -98,3 +98,5 @@ class Solution {
 // 5. Keep track of the tail of the last reversed group.
 // 6. Leave the remaining nodes (less than k) untouched.
 // 7. Return the new head of the modified list.
+
+//Reverse the list in chunks of k nodes and connect the chunks together.
