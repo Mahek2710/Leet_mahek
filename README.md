@@ -301,6 +301,14 @@
    - Time Complexity: O(N log N)  
    - Space Complexity: O(N)
 
+### 🔹 08/01/25
+
+1. **LeetCode 25 — Reverse Nodes in k-Group**  
+   - Reversed the linked list in groups of size `k` using pointer manipulation  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
+
+
 
 
 
