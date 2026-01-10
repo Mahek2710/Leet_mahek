@@ -307,6 +307,36 @@
    - Reversed the linked list in groups of size `k` using pointer manipulation  
    - Time Complexity: O(n)  
    - Space Complexity: O(1)
+  
+### 🔹 10/01/25
+
+1. **LeetCode 114 — Flatten Binary Tree to Linked List**  
+   - Used recursion to flatten left and right subtrees and rewired pointers in preorder  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(h)
+     
+  
+   ### 🔸 STACKS
+
+2. **LeetCode 20 — Valid Parentheses**  
+   - Used a stack and HashMap to validate matching brackets  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+3. **LeetCode 155 — Min Stack**  
+   - Implemented a stack that supports push, pop, top, and getMin in O(1)  
+   - Used an auxiliary stack to track the minimum element at each level  
+   - Time Complexity: O(1) per operation  
+   - Space Complexity: O(n)
+
+4. **LeetCode 716 — Max Stack**  
+   - Implemented a stack supporting push, pop, top, peekMax, and popMax  
+   - Used an auxiliary stack to track the maximum element at each level  
+   - Time Complexity:  
+     - push, pop, top, peekMax → O(1)  
+     - popMax → O(n)  
+   - Space Complexity: O(n)
+
 
 
 
