@@ -46,4 +46,3 @@ class Solution {
 
 // Temperatures: 73 74 75 71 69 72 76 73
 // Stack (indices): keeps decreasing temperatures
-
