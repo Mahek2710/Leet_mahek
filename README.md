@@ -336,6 +336,24 @@
      - push, pop, top, peekMax → O(1)  
      - popMax → O(n)  
    - Space Complexity: O(n)
+  
+
+### 🔹 17/01/26
+
+1. **LeetCode 739 — Daily Temperatures**  
+   - Used a monotonic decreasing stack to find the next warmer day for each index  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 853 — Car Fleet**  
+   - Calculated time to reach target and grouped cars into fleets based on arrival time  
+   - Time Complexity: O(n log n)  
+   - Space Complexity: O(n)
+
+3. **LeetCode 150 — Evaluate Reverse Polish Notation**  
+   - Used a stack to evaluate expressions by applying operators to the last two operands  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
 
 
 
