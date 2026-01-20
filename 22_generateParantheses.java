@@ -52,6 +52,4 @@ public class Solution {
 // 4. When the string length becomes 2 * n, store it.
 // 5. Backtrack by removing the last added character.
 // 6. Continue until all valid combinations are generated.
- {
-    
-}
+
