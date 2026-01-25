@@ -355,6 +355,21 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(n)
 
+### 🔹 23/01/26
+
+1. **LeetCode 32 — Longest Valid Parentheses**  
+   - Used a stack of indices with a base index to track valid substring lengths  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+  
+### 🔹 25/01/26
+1. **LeetCode 84 — Largest Rectangle in Histogram**  
+   - Used a monotonic increasing stack to compute maximum rectangle area  
+   - Calculated width dynamically when popping heights  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+
 
 
 
