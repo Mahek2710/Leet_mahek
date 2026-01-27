@@ -368,6 +368,32 @@
    - Calculated width dynamically when popping heights  
    - Time Complexity: O(n)  
    - Space Complexity: O(n)
+     
+### 🔹 26/01/26 (After Largest Rectangle in Histogram)
+
+1. **LeetCode 232 — Implement Queue using Stacks**  
+   - Used two stacks (`inStack`, `outStack`) with lazy transfer  
+   - Achieved amortized O(1) for push, pop, and peek  
+   - Time Complexity: Amortized O(1)  
+   - Space Complexity: O(n)
+
+
+### 🔹 27/01/26 (After Largest Rectangle in Histogram)
+
+
+1. **LeetCode 225 — Implement Stack using Queues**  
+   - Used two queues and reordered elements during push  
+   - Made pop and top operations O(1)  
+   - Time Complexity: push O(n), pop/top O(1)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 622 — Design Circular Queue**  
+   - Implemented using a fixed-size array with head pointer and size tracking  
+   - Used modulo arithmetic to achieve circular behavior  
+   - Time Complexity: O(1) for all operations  
+   - Space Complexity: O(k)
+
+
 
 
 
