@@ -369,7 +369,7 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(n)
      
-### 🔹 26/01/26 (After Largest Rectangle in Histogram)
+### 🔹 26/01/26 
 
 1. **LeetCode 232 — Implement Queue using Stacks**  
    - Used two stacks (`inStack`, `outStack`) with lazy transfer  
@@ -378,7 +378,7 @@
    - Space Complexity: O(n)
 
 
-### 🔹 27/01/26 (After Largest Rectangle in Histogram)
+### 🔹 27/01/26
 
 
 1. **LeetCode 225 — Implement Stack using Queues**  
