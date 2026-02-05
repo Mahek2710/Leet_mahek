@@ -393,6 +393,21 @@
    - Time Complexity: O(1) for all operations  
    - Space Complexity: O(k)
 
+### 🔹 05/02/26
+
+1. **LeetCode 752 — Open the Lock**  
+   - Modeled lock combinations as graph nodes and used BFS to find the minimum moves  
+   - Generated neighbors by rotating each wheel forward and backward  
+   - Skipped deadends and already visited states  
+   - Time Complexity: O(10⁴)  
+   - Space Complexity: O(10⁴)
+
+2. **LeetCode 649 — Dota2 Senate**  
+   - Simulated the voting process using two queues to track turn order  
+   - Used index comparison to decide bans and reinsert winners for next rounds  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
 
 
 
