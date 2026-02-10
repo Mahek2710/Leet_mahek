@@ -410,6 +410,25 @@
 
 
 
+### 🔹 10/02/26
+
+1. **LeetCode 1046 — Last Stone Weight**  
+   - Used a max-heap to repeatedly smash the two heaviest stones  
+   - Reinserted the remaining weight after each smash  
+   - Time Complexity: O(n log n)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 215 — Kth Largest Element in an Array**  
+   - Maintained a min-heap of size `k` to track the k largest elements  
+   - The heap top gives the kth largest value  
+   - Time Complexity: O(n log k)  
+   - Space Complexity: O(k)
+
+3. **LeetCode 973 — K Closest Points to Origin**  
+   - Used a max-heap to keep only the k closest points to the origin  
+   - Discarded farther points dynamically based on squared distance  
+   - Time Complexity: O(n log k)  
+   - Space Complexity: O(k)
 
 
 
