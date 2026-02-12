@@ -432,6 +432,28 @@
 
 
 
+### 🔹 12/02/26
+
+1. **LeetCode 1086 — High Five**  
+   - Grouped scores by student ID using TreeMap  
+   - Used a max-heap per student to extract top 5 scores  
+   - Computed integer average of highest 5 scores  
+   - Time Complexity: O(n log n)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 703 — Kth Largest Element in a Stream**  
+   - Maintained a min-heap of size k  
+   - Heap always stores k largest elements seen so far  
+   - Heap top represents kth largest element  
+   - Time Complexity: O(n log k) (constructor), O(log k) per add  
+   - Space Complexity: O(k)
+
+3. **LeetCode 621 — Task Scheduler**  
+   - Counted task frequencies using HashMap  
+   - Used max-heap to always schedule highest frequency task first  
+   - Processed tasks in cycles of (n + 1) to respect cooldown  
+   - Time Complexity: O(n log k)  
+   - Space Complexity: O(k)
 
 
 
