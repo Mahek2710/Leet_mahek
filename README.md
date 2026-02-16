@@ -455,6 +455,26 @@
    - Time Complexity: O(n log k)  
    - Space Complexity: O(k)
 
+### 🔹 12/02/26
+
+1. **LeetCode 759 — Employee Free Time**  
+   - Pushed all intervals into a min-heap sorted by start time  
+   - Merged overlapping intervals to track working periods  
+   - Identified gaps between merged intervals as common free time  
+   - Time Complexity: O(n log n)  
+   - Space Complexity: O(n)
+
+### 🔹 16/02/26
+1. **LeetCode 295 — Find Median from Data Stream**  
+   - Used two heaps (max-heap for smaller half, min-heap for larger half)  
+   - Balanced heaps to maintain size property  
+   - Median from top of heaps (odd → max-heap top, even → average of both)  
+   - Time Complexity: O(log n) per add, O(1) findMedian  
+   - Space Complexity: O(n)
+
+
+
+
 
 
 
