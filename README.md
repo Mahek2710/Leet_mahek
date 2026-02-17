@@ -471,6 +471,20 @@
    - Median from top of heaps (odd → max-heap top, even → average of both)  
    - Time Complexity: O(log n) per add, O(1) findMedian  
    - Space Complexity: O(n)
+  
+### 🔹 17/02/26
+
+1. **LeetCode 355 — Design Twitter**  
+   - Designed User and Tweet classes with linked list for tweets  
+   - Each user follows themselves automatically  
+   - Used max-heap to merge tweets from followed users by timestamp  
+   - Retrieved top 10 most recent tweets for news feed  
+   - Time Complexity:  
+     - postTweet → O(1)  
+     - follow/unfollow → O(1)  
+     - getNewsFeed → O(F log F) (F = number of followed users)  
+   - Space Complexity: O(U + T) (users + tweets)
+
 
 
 
