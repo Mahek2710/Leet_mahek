@@ -484,6 +484,33 @@
      - follow/unfollow → O(1)  
      - getNewsFeed → O(F log F) (F = number of followed users)  
    - Space Complexity: O(U + T) (users + tweets)
+  
+### 🔹 19/02/26
+
+1. **LeetCode 104 — Maximum Depth of Binary Tree**  
+   - Used DFS recursion to compute tree height  
+   - Returned 1 + max(leftDepth, rightDepth)  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(h)
+
+2. **LeetCode 100 — Same Tree**  
+   - Recursively compared both trees  
+   - Checked null cases, node values, and subtrees  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(h)
+
+3. **LeetCode 101 — Symmetric Tree**  
+   - Checked mirror structure using recursion  
+   - Compared left subtree of one side with right subtree of the other  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(h)
+
+4. **LeetCode 226 — Invert Binary Tree**  
+   - Recursively swapped left and right children  
+   - Post-order style inversion  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(h)
+
 
 
 
