@@ -511,6 +511,14 @@
    - Time Complexity: O(n)  
    - Space Complexity: O(h)
 
+### 🔹 20/02/26
+
+1. **LeetCode 110 — Balanced Binary Tree**  
+   - Calculated height of left and right subtrees for each node  
+   - Checked if height difference is ≤ 1  
+   - Recursively verified balance for all subtrees  
+   - Time Complexity: O(n²)  
+   - Space Complexity: O(h)
 
 
 
