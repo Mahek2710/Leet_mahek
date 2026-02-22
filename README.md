@@ -519,7 +519,15 @@
    - Recursively verified balance for all subtrees  
    - Time Complexity: O(n²)  
    - Space Complexity: O(h)
+  
+### 🔹 22/02/26
 
+1. **LeetCode 102 — Binary Tree Level Order Traversal**  
+   - Used DFS with level parameter to simulate level order traversal  
+   - Created a new list when visiting a level for the first time  
+   - Added node values to their corresponding level index  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
 
 
 
