@@ -530,8 +530,20 @@
    - Space Complexity: O(n)
 
 
+### 🔹 23/02/26
 
+1. **LeetCode 103 — Binary Tree Zigzag Level Order Traversal**  
+   - Used BFS with level tracking and direction flag  
+   - Inserted values at front or back based on zigzag direction  
+   - Flipped direction after each level  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
 
+2. **LeetCode 199 — Binary Tree Right Side View**  
+   - Performed level order traversal using queue  
+   - Added the last node of each level to the result  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
 
 
 
