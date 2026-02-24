@@ -544,7 +544,27 @@
    - Added the last node of each level to the result  
    - Time Complexity: O(n)  
    - Space Complexity: O(n)
+   
+### 🔹 24/02/26
 
+1. **LeetCode 572 — Subtree of Another Tree**  
+   - Traversed each node of the main tree and used a helper function to compare subtrees  
+   - Used recursive tree comparison to check structural and value equality  
+   - Time Complexity: O(n × m)  
+   - Space Complexity: O(h)
+
+2. **LeetCode 1448 — Count Good Nodes in Binary Tree**  
+   - Used DFS while tracking maximum value seen along the current path  
+   - Counted node if its value was ≥ max value from root to that node  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(h)
+
+3. **LeetCode 543 — Diameter of Binary Tree**  
+   - Used DFS to compute height of each node  
+   - Calculated diameter at each node as leftHeight + rightHeight  
+   - Maintained a global variable to track maximum diameter  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(h)
 
 
 
