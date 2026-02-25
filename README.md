@@ -567,4 +567,41 @@
    - Space Complexity: O(h)
 
 
+### 📅 25-02-2026
 
+
+### 1️⃣ Validate Binary Search Tree
+**Concept:** Inorder Traversal + Previous Pointer  
+**Key Idea:**  
+Inorder traversal of a BST must produce strictly increasing values.  
+If at any point `current <= previous`, it is not a valid BST.
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(h) — recursion stack  
+
+---
+
+### 2️⃣ Lowest Common Ancestor in BST
+**Concept:** BST Property  
+
+**Key Idea:**  
+- If both nodes are smaller than root → go left  
+- If both nodes are greater than root → go right  
+- If they split → current root is LCA  
+
+**Time Complexity:** O(h)  
+**Space Complexity:** O(h) (recursion)
+
+---
+
+### 3️⃣ Kth Smallest Element in BST
+**Concept:** Inorder Traversal (Sorted Order)
+
+**Key Idea:**  
+Inorder traversal of BST gives sorted values.  
+Return element at index `k-1`.
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(n) — storing inorder list  
+
+---
