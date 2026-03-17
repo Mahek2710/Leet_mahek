@@ -606,7 +606,6 @@ Return element at index `k-1`.
 
 ---
 
-
 ### 🔹 17/03/26
 
 1. **LeetCode 105 — Construct Binary Tree from Preorder and Inorder Traversal**  
@@ -622,3 +621,11 @@ Return element at index `k-1`.
    - During deserialization, recursively rebuilt the tree by consuming values in order  
    - Time Complexity: O(n)  
    - Space Complexity: O(n)
+
+3. **LeetCode 124 — Binary Tree Maximum Path Sum**  
+   - Used DFS recursion to compute the maximum gain from each node  
+   - Ignored negative subtree gains using `Math.max(gain, 0)` to avoid reducing path sum  
+   - Calculated the best path through each node as `node.val + leftGain + rightGain`  
+   - Maintained a global variable to track the maximum path sum across the tree  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(h) (recursion stack, where h = height of tree)
