@@ -605,3 +605,20 @@ Return element at index `k-1`.
 **Space Complexity:** O(n) — storing inorder list  
 
 ---
+
+
+### 🔹 17/03/26
+
+1. **LeetCode 105 — Construct Binary Tree from Preorder and Inorder Traversal**  
+   - Used preorder to determine the root and inorder to split left and right subtrees  
+   - Stored inorder indices in a HashMap for O(1) lookups  
+   - Recursively constructed left and right subtrees using inorder boundaries  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
+
+2. **LeetCode 297 — Serialize and Deserialize Binary Tree**  
+   - Used preorder traversal to serialize the binary tree structure  
+   - Stored `"null"` markers for missing nodes to preserve exact tree shape  
+   - During deserialization, recursively rebuilt the tree by consuming values in order  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(n)
