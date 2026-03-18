@@ -629,3 +629,23 @@ Return element at index `k-1`.
    - Maintained a global variable to track the maximum path sum across the tree  
    - Time Complexity: O(n)  
    - Space Complexity: O(h) (recursion stack, where h = height of tree)
+
+### 🔹 18/03/26
+
+1. **LeetCode 208 — Implement Trie (Prefix Tree)**  
+   - Implemented a Trie data structure to efficiently store and search words by prefix  
+   - Each node stores references to children for characters `a–z` and a boolean flag marking end of word  
+   - Supported operations: `insert`, `search`, and `startsWith` using character traversal  
+   - Time Complexity:  
+     - insert → O(L)  
+     - search → O(L)  
+     - startsWith → O(L)  
+   - Space Complexity: O(26 × N × L) (Trie nodes for each character of stored words)
+
+2. **LeetCode 212 — Word Search II**  
+   - Built a Trie from the list of words to enable fast prefix pruning  
+   - Performed DFS + Backtracking on the board to explore possible word paths  
+   - Used Trie to terminate search early if a prefix does not exist  
+   - Marked visited cells during DFS and restored them during backtracking  
+   - Time Complexity: O(M × N × 4^L) (significantly reduced due to Trie pruning)  
+   - Space Complexity: O(W × L) for Trie + O(L) recursion stack
