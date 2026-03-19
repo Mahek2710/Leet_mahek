@@ -649,3 +649,21 @@ Return element at index `k-1`.
    - Marked visited cells during DFS and restored them during backtracking  
    - Time Complexity: O(M × N × 4^L) (significantly reduced due to Trie pruning)  
    - Space Complexity: O(W × L) for Trie + O(L) recursion stack
+
+### 🔹 19/03/26
+
+1. **LeetCode 211 — Design Add and Search Words Data Structure**  
+   - Implemented Trie with support for wildcard `'.'` using DFS  
+   - Normal characters follow a single path, while `'.'` branches into all possible children  
+   - Used recursion to explore all valid paths when encountering wildcard  
+   - Time Complexity:  
+     - addWord → O(L)  
+     - search → O(26^L) worst case (due to wildcard branching)  
+   - Space Complexity: O(N × L)
+
+2. **LeetCode 547 — Number of Provinces**  
+   - Treated input as a graph (adjacency matrix) and counted connected components  
+   - Used BFS to traverse all cities reachable from an unvisited city  
+   - Each BFS traversal represents one province  
+   - Time Complexity: O(n²)  
+   - Space Complexity: O(n)
