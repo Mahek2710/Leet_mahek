@@ -667,3 +667,47 @@ Return element at index `k-1`.
    - Each BFS traversal represents one province  
    - Time Complexity: O(n²)  
    - Space Complexity: O(n)
+
+
+### 🔹 21/03/26
+
+1. **LeetCode 200 — Number of Islands**  
+   - Treated grid as a graph and used DFS to find connected components  
+   - On finding '1', performed DFS to mark entire island as visited (convert to '0')  
+   - Each DFS call represents one island  
+   - Time Complexity: O(m × n)  
+   - Space Complexity: O(m × n) (recursion stack)
+
+2. **LeetCode 695 — Max Area of Island**  
+   - Used DFS to calculate size (area) of each island  
+   - Accumulated area by summing results from recursive calls in 4 directions  
+   - Tracked maximum area among all islands  
+   - Time Complexity: O(m × n)  
+   - Space Complexity: O(m × n)
+
+3. **LeetCode 323 — Number of Connected Components in an Undirected Graph**  
+   - Built adjacency list from edges and used DFS to count components  
+   - Each unvisited node triggers a DFS representing one component  
+   - Time Complexity: O(n + e)  
+   - Space Complexity: O(n + e)
+
+4. **LeetCode 261 — Graph Valid Tree**  
+   - Checked if edges = n - 1 (tree property: no cycles)  
+   - Used DFS to verify all nodes are connected  
+   - A valid tree must satisfy: connected + no cycles  
+   - Time Complexity: O(n + e)  
+   - Space Complexity: O(n + e)
+
+5. **LeetCode 684 — Redundant Connection**  
+   - Used Union-Find (Disjoint Set) to detect cycle in graph  
+   - For each edge, checked if both nodes have same root  
+   - If yes → edge forms a cycle → return it  
+   - Time Complexity: O(n * α(n)) ≈ O(n)  
+   - Space Complexity: O(n)
+
+6. **LeetCode 133 — Clone Graph**  
+   - Used DFS + HashMap to create deep copy of graph  
+   - Stored mapping of original node → cloned node to handle cycles  
+   - Recursively cloned neighbors while avoiding duplicate processing  
+   - Time Complexity: O(V + E)  
+   - Space Complexity: O(V)
