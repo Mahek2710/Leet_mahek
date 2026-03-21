@@ -711,3 +711,10 @@ Return element at index `k-1`.
    - Recursively cloned neighbors while avoiding duplicate processing  
    - Time Complexity: O(V + E)  
    - Space Complexity: O(V)
+
+7. **LeetCode 994 — Rotting Oranges**  
+   - Used multi-source BFS starting from all rotten oranges  
+   - Spread rot level-by-level (each BFS level = 1 minute)  
+   - Tracked fresh oranges to determine if full infection was possible  
+   - Time Complexity: O(m × n)  
+   - Space Complexity: O(m × n)
