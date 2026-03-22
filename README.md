@@ -718,3 +718,26 @@ Return element at index `k-1`.
    - Tracked fresh oranges to determine if full infection was possible  
    - Time Complexity: O(m × n)  
    - Space Complexity: O(m × n)
+
+### 🔹 22/03/26
+
+1. **LeetCode 286 — Walls and Gates**  
+   - Used multi-source BFS starting from all gates (0)  
+   - Spread level-by-level to fill shortest distance for each empty room (INF)  
+   - Updated only INF cells to avoid overwriting shorter paths  
+   - Time Complexity: O(m × n)  
+   - Space Complexity: O(m × n)
+
+2. **LeetCode 130 — Surrounded Regions**  
+   - Used DFS from boundary 'O's to mark safe regions  
+   - Converted remaining 'O's (surrounded) to 'X'  
+   - Reverted marked safe cells back to 'O'  
+   - Time Complexity: O(m × n)  
+   - Space Complexity: O(m × n)
+
+3. **LeetCode 207 — Course Schedule**  
+   - Modeled as directed graph and used DFS for cycle detection  
+   - Used recursion stack (pathVisited) to detect cycles  
+   - If cycle found → cannot complete all courses  
+   - Time Complexity: O(V + E)  
+   - Space Complexity: O(V)
