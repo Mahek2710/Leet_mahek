@@ -741,3 +741,27 @@ Return element at index `k-1`.
    - If cycle found → cannot complete all courses  
    - Time Complexity: O(V + E)  
    - Space Complexity: O(V)
+
+
+### 🔹 23/03/26
+
+1. **LeetCode 210 — Course Schedule II**  
+   - Used DFS-based Topological Sort with cycle detection (WHITE, GRAY, BLACK states)  
+   - Added nodes in post-order and reversed to get valid course ordering  
+   - Detected cycles using GRAY nodes (recursion stack)  
+   - Time Complexity: O(V + E)  
+   - Space Complexity: O(V)
+
+2. **LeetCode 417 — Pacific Atlantic Water Flow**  
+   - Used reverse DFS from ocean boundaries (multi-source traversal)  
+   - Marked cells reachable from Pacific and Atlantic separately  
+   - Collected intersection of both reachable sets  
+   - Time Complexity: O(m × n)  
+   - Space Complexity: O(m × n)
+
+3. **LeetCode 277 — Find the Celebrity**  
+   - Used two-pass approach: candidate elimination + verification  
+   - Eliminated non-celebrities in one pass using knows() relation  
+   - Verified candidate by checking “knows nobody” and “known by all”  
+   - Time Complexity: O(n)  
+   - Space Complexity: O(1)
