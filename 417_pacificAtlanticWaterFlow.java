@@ -11,45 +11,42 @@ class Solution {
         int cols = heights[0].length;
 
         // These matrices tell:
-        // Can water from this cell reach Pacific / Atlantic?
+        // whether a cell can reach Pacific / Atlantic ocean
         boolean[][] pacificReachable = new boolean[rows][cols];
         boolean[][] atlanticReachable = new boolean[rows][cols];
 
 
-        // ===== STEP 1: START DFS FROM OCEANS =====
-        // Instead of going from every cell → ocean (hard)
-        // we go from ocean → cells (reverse thinking)
+        // ================= STEP 1 =================
+        // Start DFS from ocean borders (reverse thinking)
 
-
-        // Left and Right borders
+        // Left (Pacific) and Right (Atlantic) borders
         for (int i = 0; i < rows; i++) {
 
-            // Pacific (left edge)
+            // Pacific ocean → left edge
             dfs(i, 0, pacificReachable, heights);
 
-            // Atlantic (right edge)
+            // Atlantic ocean → right edge
             dfs(i, cols - 1, atlanticReachable, heights);
         }
 
-
-        // Top and Bottom borders
+        // Top (Pacific) and Bottom (Atlantic) borders
         for (int j = 0; j < cols; j++) {
 
-            // Pacific (top edge)
+            // Pacific ocean → top edge
             dfs(0, j, pacificReachable, heights);
 
-            // Atlantic (bottom edge)
+            // Atlantic ocean → bottom edge
             dfs(rows - 1, j, atlanticReachable, heights);
         }
 
 
-        // ===== STEP 2: FIND COMMON CELLS =====
+        // ================= STEP 2 =================
+        // Find cells reachable from BOTH oceans
         List<List<Integer>> result = new ArrayList<>();
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
 
-                // If both oceans can reach this cell → valid answer
                 if (pacificReachable[i][j] && atlanticReachable[i][j]) {
                     result.add(List.of(i, j));
                 }
@@ -60,26 +57,23 @@ class Solution {
     }
 
 
-    // ===== DFS FUNCTION =====
+    // ================= DFS =================
     public void dfs(int row, int col,
                     boolean[][] reachable,
                     int[][] heights) {
 
-        // Mark this cell as reachable from this ocean
+        // Mark current cell as reachable from this ocean
         reachable[row][col] = true;
 
-
-        // 4 directions
+        // 4 directions (right, down, up, left)
         int[][] directions = {
             {0, 1}, {1, 0}, {-1, 0}, {0, -1}
         };
-
 
         for (int[] dir : directions) {
 
             int newRow = row + dir[0];
             int newCol = col + dir[1];
-
 
             // Boundary check
             if (newRow < 0 || newRow >= heights.length ||
@@ -87,22 +81,24 @@ class Solution {
                 continue;
             }
 
-
             // Already visited → skip
             if (reachable[newRow][newCol]) {
                 continue;
             }
 
-
-            // 🔥 CORE CONDITION:
-            // We only move to higher or equal height
-            // (reverse of water flow)
-            if (heights[newRow][newCol] >= heights[row][col]) {
-                dfs(newRow, newCol, reachable, heights);
+            // 🔥 CORE LOGIC:
+            // Skip lower heights
+            // → only move to equal or higher heights
+            if (heights[newRow][newCol] < heights[row][col]) {
+                continue;
             }
+
+            // Continue DFS
+            dfs(newRow, newCol, reachable, heights);
         }
     }
 }
+
 
 /*
 ================= 🧾 PROBLEM BRIEF =================
@@ -153,13 +149,17 @@ Cells reachable from BOTH → answer
 
 ================= ⚠️ IMPORTANT DETAIL =================
 
-Condition:
+Condition used:
 
-heights[new] >= heights[current]
+if (heights[new] < heights[current]) continue;
 
-Why?
+Meaning:
+→ skip lower heights
 
-Because we are reversing water flow direction
+So effectively:
+→ we ONLY move to equal or higher heights
+
+This matches reverse water flow logic
 
 
 ================= ⏱ TIME & SPACE =================
@@ -171,26 +171,26 @@ Time: O(m × n)
 
 Space: O(m × n)
 
-- recursion + visited arrays
+- recursion stack + visited arrays
 
 
 ================= 🔥 MEMORY TRICK =================
 
-"Reverse flow → ocean se chalo"
+"Skip lower → go only higher"
 
 OR
 
-"Find cells reachable FROM both oceans"
+"Ocean se chalo, water nahi"
 
 
 ================= 🧠 PATTERN =================
 
 Grid + DFS + Reverse Flow
 
-Similar to:
+Same pattern as:
 - Surrounded Regions
 - Number of Islands
-- Multi-source DFS
+- Multi-source traversal
 
 
 ================================================
