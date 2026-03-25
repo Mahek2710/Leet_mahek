@@ -1,45 +1,58 @@
 class Solution {
+
     public int networkDelayTime(int[][] times, int n, int k) {
-        
-        Map<Integer,List<int[]>> graph = new HashMap<>();
-        for(int[] edge : times){
-            graph.computeIfAbsent(edge[0],x -> new ArrayList<>()).add(new int[]{edge[1],edge[2]});
+
+        Map<Integer, List<int[]>> graph = new HashMap<>();
+
+        for (int[] edge : times) {
+            graph.computeIfAbsent(edge[0], x -> new ArrayList<>())
+                 .add(new int[]{edge[1], edge[2]});
         }
 
-        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
-        pq.offer(new int[]{k,0});
+        PriorityQueue<int[]> pq =
+                new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
 
-        int[] distances = new int[n+1];
-        Arrays.fill(distances,Integer.MAX_VALUE);
+        pq.offer(new int[]{k, 0});
+
+        int[] distances = new int[n + 1];
+        Arrays.fill(distances, Integer.MAX_VALUE);
         distances[k] = 0;
 
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()) {
+
             int[] current = pq.poll();
-            int currentNode = current[0];
-            int currentDist = current[1];
+            int node = current[0];
+            int dist = current[1];
 
-            if(currentDist > distance[currentNode]){
-                continue;
-            }
+            if (dist > distances[node]) continue;
 
-            if(graph.containsKey(currentNode)){
-                for(int[] neighbor : graph.get(currentNode)){
+            if (graph.containsKey(node)) {
+                for (int[] neighbor : graph.get(node)) {
+
                     int nextNode = neighbor[0];
-                    int nextDist = currentDist + neighbor[1];
-                    if(nextDist < distances[nextNode]){
-                        distances[nextNode] = nextDist;
-                        pq.offer(new int[]{nextNode,nextDist});
+                    int weight = neighbor[1];
+
+                    int newDist = dist + weight;
+
+                    if (newDist < distances[nextNode]) {
+                        distances[nextNode] = newDist;
+                        pq.offer(new int[]{nextNode, newDist});
                     }
                 }
             }
         }
+
+        // ===== FINAL ANSWER =====
+        int maxDist = 0;
+
+        for (int i = 1; i <= n; i++) {
+            if (distances[i] == Integer.MAX_VALUE) return -1;
+            maxDist = Math.max(maxDist, distances[i]);
+        }
+
+        return maxDist;
     }
-
-    int maxDist = Arrays.stream(distances).skip(1).max().getAsInt();
-    return maxDist == Integer.MAX_VALUE ? -1 : maxDist;
 }
-
-
 /*
 ================= 🧾 PROBLEM BRIEF =================
 
