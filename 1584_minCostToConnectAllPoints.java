@@ -89,6 +89,7 @@ Connect all points with minimum total cost
 
 Distance = Manhattan distance
 
+Pick smallest edge → expand → repeat
 
 ================= 🧠 CORE INTUITION =================
 
