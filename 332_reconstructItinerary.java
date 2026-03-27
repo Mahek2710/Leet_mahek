@@ -164,13 +164,13 @@ Space: O(E)
 
 ================= 🔥 MEMORY TRICK =================
 
-"Use edge → DFS → add after → reverse path"
+"Use edge → DFS → add after → Reverse path"
 
 
 ================= 🧠 PATTERN =================
 
 Graph + Eulerian Path (Hierholzer’s Algorithm)
 
-Use all edges exactly once → Eulerian Path
+Use all edges exactly once → Eulierian Path
 ================================================
 */
