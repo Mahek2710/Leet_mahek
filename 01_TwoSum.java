@@ -1,34 +1,187 @@
-class Solution{
-    public int[] twoSum(int[] nums, int target){
+class Solution {
 
-        Map<Integer,Integer> map = new HashMap<>();
+    public int[] twoSum(int[] nums, int target) {
 
-        //Traverse the array
-        for(int i = 0 ; i < nums.length; i++){
-            int diff = target - nums[i];
+        // Map will store: number → index
+        // WHY?
+        // So we can quickly check if complement exists in O(1)
+        Map<Integer, Integer> map = new HashMap<>();
 
-            //If the difference is in the map , return the indices
-            if(map.containsKey(diff)){
-                return new int[]{map.get(diff) , i};
+
+        // Traverse the array once (no nested loop → O(n))
+        for (int i = 0; i < nums.length; i++) {
+
+            int current = nums[i];          // current number at index i
+            int diff = target - current;   // value needed to reach target
+
+
+            // ===== CHECK =====
+            // Check if required complement already appeared BEFORE
+            // WHY?
+            // Because we store previous elements in map
+            if (map.containsKey(diff)) {
+
+                // If found → we already saw the needed number
+                // map.get(diff) → index of that number
+                // i → current index
+                return new int[]{map.get(diff), i};
             }
 
-            //Otherwise,store the number and its index
-            map.put(nums[i],i);
+
+            // ===== STORE =====
+            // Store current number AFTER checking
+            // WHY?
+            // To avoid using same element twice
+            map.put(current, i);
         }
 
-        return null; //when no soln found. but would never happen as problem statement has constraints ki exactly 1 ans hoga hi hoga
+
+        // As per problem, solution always exists
+        return null;
     }
 }
 
 
+/*
+================= 🧠 PROBLEM THINKING =================
 
-// TC: O(n) - One pass through the array, O(1) lookups in HashMap.
-// SC: O(n) - At worst, storing all elements in HashMap.
- 
+Brute Force:
+- Check every pair → O(n^2) ❌ (too slow)
+
+Optimized Thinking:
+- Instead of checking pairs,
+  ask: "Mujhe target banane ke liye kya chahiye?"
+
+- For each number:
+  → Find complement = target - current
+  → Check if it already exists
+
+- Convert problem into FAST LOOKUP → use HashMap
 
 
-// 1. Check if target - num is in map.
-// 2. If yes, return indices.
-// 3. Else, store num and its index.
+================= ⚙️ CODE FLOW (HOW + WHY) =================
+
+1. Create HashMap → stores (number → index)
+   → keeps track of elements we've already seen
+
+2. Traverse array once
+
+3. For each element:
+   a) Calculate diff = target - current
+   b) Check if diff exists in map
+        → YES → return indices
+        → NO → store current element
+
+4. Continue until solution found
+
+KEY IDEA:
+- Map stores PAST elements
+- Current element tries to match with PAST
 
 
+================= 🔄 EXECUTION FLOW =================
+
+Example:
+nums = [2, 7, 11, 15]
+target = 9
+
+
+Step 1:
+i = 0
+current = 2
+diff = 7
+
+map = {}
+→ 7 not found
+
+STORE → {2:0}
+
+
+Step 2:
+i = 1
+current = 7
+diff = 2
+
+map = {2:0}
+→ 2 found ✅
+
+RETURN → [0,1]
+
+
+================= ⏱ TIME COMPLEXITY =================
+
+O(n)
+
+- Single loop
+- HashMap lookup → O(1)
+
+
+================= 📦 SPACE COMPLEXITY =================
+
+O(n)
+
+- In worst case, all elements stored in map
+
+
+================= 🎯 MEMORY LINE =================
+
+"Check complement in map, then store current."
+
+====================================================
+*/
+
+/*
+================= 🧠 THINKING =================
+
+For every number:
+→ Find what number is needed to make target
+
+Instead of checking all pairs (O(n²)),
+use HashMap for fast lookup.
+
+
+================= 🧠 EXECUTION FLOW =================
+
+Example:
+
+nums = [2, 7, 11, 15]
+target = 9
+
+
+STEP 1:
+i = 0 → num = 2
+need = 7
+
+map = {}
+→ not found → store 2
+
+map = {2:0}
+
+
+STEP 2:
+i = 1 → num = 7
+need = 2
+
+map = {2:0}
+→ found ✅
+
+return [0,1]
+
+
+================= ⏱ TIME COMPLEXITY =================
+
+O(n)
+
+- Single pass through array
+- HashMap lookup is O(1)
+
+
+================= 📦 SPACE COMPLEXITY =================
+
+O(n)
+
+- In worst case, we store all elements in map
+
+
+================================================
+*/
