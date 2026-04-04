@@ -1,44 +1,148 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
         
-        //check length (length hi alag hai toh aage kya faayda)
+        // ===== LENGTH CHECK =====
+        // If lengths differ → impossible to be anagram
+        // (because same characters count required)
         if(s.length() != t.length()){
             return false;
         }
 
-        //create array to calculate the frequency
-        int [] charCounts = new int[26] ; // assuming only small case
+        // ===== FREQUENCY ARRAY =====
+        // Stores count of each character (a–z)
+        // Index 0 → 'a', 1 → 'b', ..., 25 → 'z'
+        int [] charCounts = new int[26]; // fixed size → O(1) space
 
-        //count++ for each char in 's'
-        //count-- for each char in 't'
+        // ===== COUNTING =====
+        // For same index i:
+        // +1 for s[i]
+        // -1 for t[i]
+        // WHY?
+        // → If both strings have same frequency,
+        //   all values will cancel out to 0
 
         for(int i = 0 ; i < s.length() ; i++){  
-            //s.length() == t.length() is already checked, so same loop covers both strings   safely         
 
+            // Convert char to index using (char - 'a')
+            // Example: 'c' - 'a' = 2
             charCounts[s.charAt(i) - 'a']++; 
             charCounts[t.charAt(i) - 'a']--;
-
-            //char - 'a' gives index 0–25 for lowercase letters (e.g. 'c' - 'a' = 2)
         }
 
-        //check if all counts are zero
+        // ===== VALIDATION =====
+        // If any count != 0 → mismatch exists
         for(int count : charCounts){
             if(count != 0)
-            return false;
+                return false;
         }
 
-        return true ; //all counts = 0 hence s is an anagram of t or viceversa
+        // All counts balanced → valid anagram
+        return true;
     }
 }
 
 
-// TC: O(n) - One pass through both strings.
-// SC: O(1) - Fixed size array of 26 characters. woh badhega nahi fixed rehta hai 26 hi isliye 1.
+/*
+================= 🧠 PROBLEM THINKING =================
+
+Anagram means:
+- Same characters
+- Same frequency
+
+Brute Force:
+- Sort both strings and compare → O(n log n) ❌
+
+Optimized Thinking:
+- Instead of sorting,
+  count frequency of characters
+
+👉 If frequencies match → anagram
 
 
-// 1. Check if both strings have the same length.
-// 2. Create a frequency array of size 26.
-// 3. Increment count for each character in s.
-// 4. Decrement count for each character in t.
-// 5. If any value in the array is not zero(meaning ek mein kam zyada hai chars), return false.
-// 6. If all values are zero, return true (valid anagram).
+================= ⚙️ CODE FLOW (HOW + WHY) =================
+
+1. Check length
+   → If different → return false immediately
+
+2. Create array[26]
+   → stores frequency of each character
+
+3. Traverse both strings together:
+   - Increment for s
+   - Decrement for t
+
+   WHY together?
+   → Saves extra loop
+   → Cancels out counts directly
+
+4. Traverse array:
+   - If any value ≠ 0 → mismatch → return false
+
+5. Else → return true
+
+
+================= 🔄 EXECUTION FLOW =================
+
+Example:
+s = "anagram"
+t = "nagaram"
+
+
+Initial:
+charCounts = all 0
+
+
+After processing:
+
+a → +1 (s), -1 (t) → cancels
+n → +1, -1 → cancels
+g → +1, -1 → cancels
+...
+
+Final array:
+[0,0,0,...,0]
+
+→ All zero ✅
+
+
+Example 2:
+s = "rat"
+t = "car"
+
+r → +1
+a → +1
+t → +1
+
+c → -1
+a → -1
+r → -1
+
+Final:
+t → +1 (extra)
+c → -1 (missing)
+
+→ Not all zero ❌ → return false
+
+
+================= ⏱ TIME COMPLEXITY =================
+
+O(n)
+
+- Single pass through strings
+- Second loop runs only 26 times → constant
+
+
+================= 📦 SPACE COMPLEXITY =================
+
+O(1)
+
+- Array size fixed = 26
+- Does not grow with input
+
+
+================= 🎯 MEMORY LINE =================
+
+"Increase for s, decrease for t → all zeros means anagram."
+
+====================================================
+*/
