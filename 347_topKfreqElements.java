@@ -1,41 +1,57 @@
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
 
-        // If k is the entire array size, return nums directly
+        // ===== EDGE CASE =====
+        // If k equals the size of the array,
+        // we can simply return the original array
         if (k == nums.length) {
             return nums;
         }
 
-        // Map to count frequency of each number
+        // ===== STEP 1: BUILD FREQUENCY MAP =====
+        // This map will store:
+        // key   = number from array
+        // value = how many times it appears
         Map<Integer, Integer> count = new HashMap<>();
-        for (int n : nums) {
-            count.put(n, count.getOrDefault(n, 0) + 1); //If n is already in the map →      use         its  old count    If not → use 0     Then add 1 and store back. 
 
+        for (int n : nums) {
+            // getOrDefault(n, 0):
+            // - if 'n' exists → returns its current frequency
+            // - if not → returns 0
+            // then we add 1 to update frequency
+            count.put(n, count.getOrDefault(n, 0) + 1);
         }
 
-// Min-heap that orders numbers by their frequency (smallest frequency at top)
+        // ===== STEP 2: CREATE MIN HEAP =====
+        // Heap will store numbers, NOT frequencies
+        // But ordering is based on frequency using the map
+
         Queue<Integer> heap = new PriorityQueue<>(
             (a, b) -> count.get(a) - count.get(b)
-            //count.get(a) = frequency of number a
-
-            //count.get(b) = frequency of number b
-
-           //If a's frequency is smaller → result is negative → a goes to the top of the min-heap
-
-         //This forces the heap to always remove the least frequent element first
-
+            // Comparator explanation:
+            // - number with smaller frequency comes first
+            // - this makes it a MIN HEAP based on frequency
         );
 
-        // Keep only the top k most frequent elements in the heap
+        // ===== STEP 3: KEEP ONLY TOP K FREQUENT ELEMENTS =====
         for (int n : count.keySet()) {
+
+            // Add current number into heap
             heap.add(n);
+
+            // If heap size exceeds k:
+            // remove the element with LOWEST frequency
+            // (because we only want top k frequent elements)
             if (heap.size() > k) {
-                heap.poll(); // remove least frequent
+                heap.poll();
             }
         }
 
-        // Extract the k most frequent elements
+        // ===== STEP 4: BUILD RESULT ARRAY =====
         int[] ans = new int[k];
+
+        // Extract elements from heap
+        // Note: order is not guaranteed (heap property)
         for (int i = 0; i < k; i++) {
             ans[i] = heap.poll();
         }
@@ -44,21 +60,98 @@ class Solution {
     }
 }
 
+/*
+================= 🧠 PROBLEM UNDERSTANDING =================
+
+Goal:
+- Return the k most frequent elements from the array
+
+Key idea:
+- We DON'T need all elements sorted
+- We only care about the TOP k frequent ones
 
 
+================= ⚙️ APPROACH OVERVIEW =================
+
+Step 1: Count frequencies
+→ Use a HashMap to store how many times each number appears
+
+Step 2: Use a Min Heap (size = k)
+→ Heap stores numbers
+→ Ordering is based on frequency (using the map)
+
+Step 3: Maintain only top k elements
+→ Add each number into heap
+→ If heap size becomes > k:
+     remove the element with LOWEST frequency
+
+Step 4: Extract result
+→ Heap now contains k most frequent elements
 
 
-// TC: O(n log k)
-// Building the frequency map takes O(n), pushing/removing from heap is O(log k).
+================= 🔑 WHY MIN HEAP? =================
 
-// SC: O(n)
-// Map stores frequency of each unique number.
-// Heap stores up to k elements.
+We want to REMOVE the least useful element quickly
+
+- Least useful = lowest frequency
+- Min heap gives access to smallest element in O(log k)
+
+So:
+→ Keep pushing elements
+→ Remove smallest whenever size exceeds k
+
+👉 This ensures heap always contains TOP k frequent elements
 
 
-// 1. Build a frequency map for all numbers.
-// 2. Use a min-heap to keep only the top k most frequent numbers.
-// 3. Every time heap size exceeds k, remove the number with least frequency.
-// 4. After processing all numbers, the heap contains the k most frequent ones.
-// 5. Extract elements from heap to form the answer.
+================= 🔄 DRY RUN =================
 
+Example:
+nums = [1,1,1,2,2,3], k = 2
+
+Frequency Map:
+1 → 3
+2 → 2
+3 → 1
+
+
+Heap operations:
+
+Add 1 → [1]
+
+Add 2 → [2,1]   (2 has smaller freq → comes first)
+
+Add 3 → [3,1,2]
+
+Size > k → remove least frequent (3)
+
+Final heap:
+[2,1]
+
+
+Answer:
+[2,1] (order doesn't matter)
+
+
+================= ⏱ TIME COMPLEXITY =================
+
+O(n log k)
+
+- Build map → O(n)
+- Each heap operation → O(log k)
+- We do it for each unique element
+
+
+================= 📦 SPACE COMPLEXITY =================
+
+O(n)
+
+- HashMap stores frequencies
+- Heap stores at most k elements
+
+
+================= 🎯 ONE-LINE INTUITION =================
+
+"Keep a min heap of size k and remove the least frequent element whenever it grows too big."
+
+====================================================
+*/
